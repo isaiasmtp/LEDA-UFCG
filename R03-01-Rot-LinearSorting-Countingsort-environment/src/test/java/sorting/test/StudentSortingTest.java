@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import sorting.AbstractSorting;
+import sorting.linearSorting.CountingSort;
+import sorting.linearSorting.ExtendedCountingSort;
 
 public class StudentSortingTest {
 
@@ -15,6 +17,8 @@ public class StudentSortingTest {
 	private Integer[] vetorVazio = {};
 	private Integer[] vetorValoresRepetidos;
 	private Integer[] vetorValoresIguais;
+	private Integer[] vetorValoresNegativos;
+
 
 	public AbstractSorting<Integer> implementation;
 
@@ -27,6 +31,8 @@ public class StudentSortingTest {
 		populaVetorRepetido(new Integer[] { 4, 9, 3, 4, 0, 5, 1, 4 });
 		populaVetorIgual(new Integer[] { 6, 6, 6, 6, 6, 6 });
 
+		populaVetorNegativo(new Integer[] { -1, -36, -34, -3, 123, 321 });
+
 		getImplementation();
 	}
 
@@ -38,12 +44,16 @@ public class StudentSortingTest {
 	private void getImplementation() {
 		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
 		// null
-		this.implementation = null;
-		Assert.fail("Implementation not provided");
+		this.implementation = new ExtendedCountingSort();
+//		Assert.fail("Implementation not provided");
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
 		this.vetorTamPar = Arrays.copyOf(arrayPadrao, arrayPadrao.length);
+	}
+
+	public void populaVetorNegativo(Integer[] arrayPadrao) {
+		this.vetorValoresNegativos = Arrays.copyOf(arrayPadrao, arrayPadrao.length);
 	}
 
 	public void populaVetorTamanhoImpar(Integer[] arrayPadrao) {
@@ -100,6 +110,12 @@ public class StudentSortingTest {
 	}
 
 	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
+
+	@Test
+	public void testSort06() {
+		genericTest(vetorValoresNegativos);
+	}
+
 	/**
 	 * O ALUNO PODE IMPLEMENTAR METODOS DE ORDENAÇÃO TESTANDO O SORT COM TRES
 	 * ARGUMENTOS PARA TESTAR A ORDENACAO EM UM PEDAÇO DO ARRAY. DICA: PROCUREM
