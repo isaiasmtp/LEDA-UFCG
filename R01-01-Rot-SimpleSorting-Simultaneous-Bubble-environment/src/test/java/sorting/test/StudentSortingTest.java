@@ -2,6 +2,7 @@ package sorting.test;
 
 import java.util.Arrays;
 
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,7 @@ import sorting.AbstractSorting;
 import sorting.simpleSorting.BubbleSort;
 import sorting.simpleSorting.InsertionSort;
 import sorting.simpleSorting.SelectionSort;
+import sorting.variationsOfBubblesort.SimultaneousBubblesort;
 
 public class StudentSortingTest {
 
@@ -42,6 +44,7 @@ public class StudentSortingTest {
 		// TODO O aluno deve instanciar sua implementação abaixo ao invés de
 		// null
 		this.implementation = new InsertionSort<>();
+		
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -69,7 +72,7 @@ public class StudentSortingTest {
 	public void genericTest(Integer[] array) {
 		Integer[] copy1 = {};
 		if(array.length > 0){
-			copy1 = Arrays.copyOf(array, array.length);			
+			copy1 = Arrays.copyOf(array, array.length);
 		}
 		implementation.sort(array);
 		Arrays.sort(copy1);
