@@ -2,6 +2,8 @@ package sorting.variationsOfBubblesort;
 
 import sorting.AbstractSorting;
 
+import static util.Util.swap;
+
 /**
  * This algorithm applies two bubblesorts simultaneously. In a same iteration, a
  * bubblesort pushes the greatest elements to the right and another bubblesort
@@ -14,7 +16,29 @@ import sorting.AbstractSorting;
 public class SimultaneousBubblesort<T extends Comparable<T>> extends
 		AbstractSorting<T> {
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+
+		for (int i = 0; i <= rightIndex; i++){
+			for(int j= leftIndex; j < rightIndex - i; j++){
+				if(array[j].compareTo(array[j+1]) > 0){
+					swap(array,j,j+1);
+				}
+			}
+
+			for(int j = rightIndex;j > leftIndex; j--){
+				if(array[j].compareTo(array[j-1])  < 0 ){
+					swap(array,j,j-1);
+				}
+			}
+
+
+
+		}
+
+
+
+
+
+
+
 	}
 }
