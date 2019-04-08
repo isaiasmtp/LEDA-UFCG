@@ -29,16 +29,6 @@ public class SimultaneousBubblesort<T extends Comparable<T>> extends
 					swap(array,j,j-1);
 				}
 			}
-
-
-
 		}
-
-
-
-
-
-
-
 	}
 }
