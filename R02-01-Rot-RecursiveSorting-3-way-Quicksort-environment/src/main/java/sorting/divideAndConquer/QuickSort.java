@@ -3,6 +3,8 @@ package sorting.divideAndConquer;
 import sorting.AbstractSorting;
 import util.Util;
 
+import java.util.Arrays;
+
 /**
  * Quicksort is based on the divide-and-conquer paradigm. The algorithm chooses
  * a pivot element and rearranges the elements of the interval in such a way
@@ -16,25 +18,28 @@ public class QuickSort<T extends Comparable<T>> extends AbstractSorting<T> {
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
 
-		if(leftIndex < rightIndex){
-			int pi = partition(array,leftIndex,rightIndex);
-			sort(array,leftIndex,pi - 1);
-			sort(array,pi + 1, rightIndex);
+		if (leftIndex < rightIndex){
+
+			int pivot = particion(array,leftIndex,rightIndex);
+			sort(array,leftIndex,pivot-1);
+			sort(array,pivot+1,rightIndex);
 		}
 	}
 
-	private int partition(T[] array, int leftIndex, int rightIndex) {
-		T pivot = array[rightIndex];
-		int i = leftIndex - 1;
+	private int particion(T[] array, int leftIndex, int rightIndex) {
 
-		for (int k = leftIndex; k < rightIndex; k++){
+	T pivot = array[rightIndex];
+	int i = leftIndex - 1;
 
-			if(array[k].compareTo(pivot) <= 0){
-				i++;
-				util.Util.swap(array, i, k);
-			}
+	for(int j = leftIndex; j < rightIndex; j++){
+		if(array[j].compareTo(pivot) <= 0){
+			i++;
+			util.Util.swap(array,i,j);
 		}
-		util.Util.swap(array,i+1, rightIndex);
-		return (i+1);
+	}
+
+	util.Util.swap(array,i+1, rightIndex);
+	return (i+1);
 	}
 }
+
