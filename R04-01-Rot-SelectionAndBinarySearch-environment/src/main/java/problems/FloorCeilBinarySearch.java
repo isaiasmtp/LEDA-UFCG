@@ -43,6 +43,7 @@ public class FloorCeilBinarySearch implements FloorCeil {
 
 	@Override
 	public Integer ceil(Integer[] array, Integer x) {
+
 		return ceil(array, x, 0, array.length-1);
 	}
 
@@ -68,4 +69,23 @@ public class FloorCeilBinarySearch implements FloorCeil {
 		}
 		return result;
 	}
+
+
+
+
+
+	public static void main(String[] args){
+
+		Integer[] array = {1,2,3,4,5,6,7,8,10};
+
+		FloorCeilBinarySearch classe = new FloorCeilBinarySearch();
+
+		int x = classe.floor(array,9);
+
+		System.out.println(x);
+
+
+	}
+
+
 }
