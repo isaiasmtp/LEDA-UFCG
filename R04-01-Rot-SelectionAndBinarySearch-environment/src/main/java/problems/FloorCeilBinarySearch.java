@@ -18,24 +18,24 @@ public class FloorCeilBinarySearch implements FloorCeil {
 		return floor(array, x, 0, array.length-1);
 	}
 
-	private int floor(Integer[] arr, int n, int leftIndex, int rightIndex) {
+	private int floor(Integer[] arr, int n, int left, int right) {
 		int result = -1;
-		int middleIndex = (leftIndex+rightIndex) / 2;
+		int middle = (left+right) / 2;
 
-		if (leftIndex < rightIndex) {
-			if (n == arr[middleIndex]) {
-				result = arr[middleIndex];
-			} else if (n > arr[middleIndex]) {
-				result = floor(arr, n, middleIndex+1, rightIndex);
+		if (left < right) {
+			if (n == arr[middle]) {
+				result = arr[middle];
+			} else if (n > arr[middle]) {
+				result = floor(arr, n, middle+1, right);
 			} else {
-				result = floor(arr, n, leftIndex, middleIndex-1);
+				result = floor(arr, n, left, middle-1);
 			}
 
-		} else if (leftIndex <= rightIndex) {
-			if (n >= arr[middleIndex]) {
-				result = arr[middleIndex];
+		} else if (left <= right) {
+			if (n >= arr[middle]) {
+				result = arr[middle];
 			} else {
-				result = arr[middleIndex-1];
+				result = arr[middle-1];
 			}
 		}
 		return result;
@@ -46,20 +46,20 @@ public class FloorCeilBinarySearch implements FloorCeil {
 		return ceil(array, x, 0, array.length-1);
 	}
 
-	private int ceil(Integer[] arr, int n, int leftIndex, int rightIndex) {
+	private int ceil(Integer[] arr, int n, int left, int right) {
 		int result = -1;
-		int middleIndex = (leftIndex+rightIndex) / 2;
+		int middleIndex = (left+right) / 2;
 
-		if (leftIndex < rightIndex) {
+		if (left < right) {
 			if (n == arr[middleIndex]) {
 				result = arr[middleIndex];
 			} else if (n > arr[middleIndex]) {
-				result = ceil(arr, n, middleIndex+1, rightIndex);
+				result = ceil(arr, n, middleIndex+1, right);
 			} else {
-				result = ceil(arr, n, leftIndex, middleIndex-1);
+				result = ceil(arr, n, left, middleIndex-1);
 			}
 
-		} else if (leftIndex >= rightIndex) {
+		} else if (left >= right) {
 			if (n <= arr[middleIndex]) {
 				result = arr[middleIndex];
 			} else if (middleIndex+1 < arr.length) {

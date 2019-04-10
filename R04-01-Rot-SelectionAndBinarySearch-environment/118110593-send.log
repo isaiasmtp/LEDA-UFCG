@@ -17,3 +17,23 @@
   <level>FINE</level>
   <message>File 118110593-ISAIAS MARTINS TEIXEIRA PONTES.zip was received. It was sent by ISAIAS MARTINS TEIXEIRA PONTES from IP 192.168.130.111</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-10T08:26:10.781-0300</date>
+  <logger>ISAIAS MARTINS TEIXEIRA PONTES</logger>
+  <level>FINE</level>
+  <message>File 118110593-ISAIAS MARTINS TEIXEIRA PONTES.zip was received. It was sent by ISAIAS MARTINS TEIXEIRA PONTES from IP 192.168.130.111</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-10T08:29:34.201-0300</date>
+  <logger>ISAIAS MARTINS TEIXEIRA PONTES</logger>
+  <level>FINE</level>
+  <message>File 118110593-ISAIAS MARTINS TEIXEIRA PONTES.zip was received. It was sent by ISAIAS MARTINS TEIXEIRA PONTES from IP 192.168.130.111</message>
+</record>
