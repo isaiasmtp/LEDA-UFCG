@@ -8,7 +8,7 @@ public class ThreeWayQuickSort<T extends Comparable<T>> extends
 	/**
 	 * No algoritmo de quicksort, selecionamos um elemento como pivot,
 	 * particionamos o array colocando os menores a esquerda do pivot 
-	 * e os maiores a direita do pivot, e depois aplicamos a mesma estrategia 
+	 * e os maiores a direita do pivot, e depois aplicamos a mesma estrategia
 	 * recursivamente na particao a esquerda do pivot e na particao a direita do pivot. 
 	 * 
 	 * Considerando um array com muitoe elementos repetidos, a estrategia do quicksort 
@@ -25,8 +25,43 @@ public class ThreeWayQuickSort<T extends Comparable<T>> extends
 	 **/
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+
+		if(leftIndex < rightIndex){
+
+
+
+			int pivot = particion(array,leftIndex +1 ,rightIndex - 1);
+
+			sort(array,leftIndex,pivot-1);
+			sort(array,pivot+1,rightIndex);
+
+
+
+		}
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+	private int particion(T[] array, int leftIndex, int rightIndex) {
+		T pivot = array[rightIndex];
+		int i = leftIndex - 1;
+		for(int j = leftIndex; j < rightIndex; j++){
+			if(array[j].compareTo(pivot) <= 0){
+				i++;
+				util.Util.swap(array,i,j);
+			}
+		}
+		util.Util.swap(array,i+1, rightIndex);
+		return (i+1);
 	}
 
 }
