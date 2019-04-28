@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.edu.ufcg.ccc</groupId>
@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 	<name>Submissao de roteiro</name>
 
-<pluginRepositories>
+	<pluginRepositories>
 		<pluginRepository>
 			<id>ufcg-leda</id>
 			<url>http://150.165.85.29:8081/nexus/content/repositories/ufcg-leda</url>
@@ -51,7 +51,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- PARA LIMPAR OS IMPORTS QUE NAO SAO UTILIZADOS -->			
+			<!-- PARA LIMPAR OS IMPORTS QUE NAO SAO UTILIZADOS -->
 			<plugin>
 				<groupId>org.walkmod</groupId>
 				<artifactId>maven-walkmod-plugin</artifactId>

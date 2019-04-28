@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-25T14:33:22.541-0300</date>
+  <logger>ISAIAS MARTINS TEIXEIRA PONTES</logger>
+  <level>FINE</level>
+  <message>File 118110593-ISAIAS MARTINS TEIXEIRA PONTES.zip was received. It was sent by ISAIAS MARTINS TEIXEIRA PONTES from IP 150.165.42.126</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-26T23:54:27.171-0300</date>
+  <logger>ISAIAS MARTINS TEIXEIRA PONTES</logger>
+  <level>FINE</level>
+  <message>File 118110593-ISAIAS MARTINS TEIXEIRA PONTES.zip was received. It was sent by ISAIAS MARTINS TEIXEIRA PONTES from IP 192.168.0.77</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-27T00:13:40.203-0300</date>
+  <logger>ISAIAS MARTINS TEIXEIRA PONTES</logger>
+  <level>FINE</level>
+  <message>File 118110593-ISAIAS MARTINS TEIXEIRA PONTES.zip was received. It was sent by ISAIAS MARTINS TEIXEIRA PONTES from IP 192.168.0.77</message>
+</record>

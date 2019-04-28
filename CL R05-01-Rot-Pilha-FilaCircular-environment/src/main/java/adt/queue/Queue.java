@@ -18,7 +18,7 @@ public interface Queue<T> {
 
 	/**
 	 * If the queue has elements, it removes the oldest of the queue and returns
-	 * it; otherwise, it throws an exception.
+	 * it; otherwise, it returns an exception.
 	 * 
 	 * @return
 	 * @throws QueueUnderflowException
@@ -26,22 +26,22 @@ public interface Queue<T> {
 	public T dequeue() throws QueueUnderflowException;
 
 	/**
-	 * Returns (without removing) the oldest element of the queue; or 
-	 * null if the queue is empty.
+	 * Returns (without removing) the oldest element of the stack or null if the
+	 * queue is empty.
 	 * 
 	 * @return
 	 */
 	public T head();
 
 	/**
-	 * Returns true if the queue is empty; or false, otherwise.
+	 * Returns true if the queue is empty or false, otherwise.
 	 * 
 	 * @return
 	 */
 	public boolean isEmpty();
 
 	/**
-	 * Returns true if the queue is full; or false, otherwise.
+	 * Returns true if the queue is full or false, otherwise.
 	 * 
 	 * @return
 	 */

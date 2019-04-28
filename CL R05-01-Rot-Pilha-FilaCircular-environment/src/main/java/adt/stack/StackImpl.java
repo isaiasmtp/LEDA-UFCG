@@ -7,43 +7,50 @@ public class StackImpl<T> implements Stack<T> {
 
 	@SuppressWarnings("unchecked")
 	public StackImpl(int size) {
+		if (size <= 0) return;
+		
 		array = (T[]) new Object[size];
 		top = -1;
 	}
 
 	@Override
 	public T top() {
-		return array[top];
+		T result = null;
+		if (!isEmpty()) {
+			result = array[top];
+		}
+		return result;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return top == -1;	
+		return (top == -1);
 	}
 
 	@Override
 	public boolean isFull() {
-		return top == array.length-1;
+		return (top == array.length - 1);
 	}
 
 	@Override
 	public void push(T element) throws StackOverflowException {
-		if (this.isFull()) {
+		if (isFull()) {
 			throw new StackOverflowException();
-		}else {
-			top ++;
-			array[top] = element; 
 		}
+		
+		if (element != null) {
+			array[++top] = element;
+		}
+		
 	}
 
 	@Override
 	public T pop() throws StackUnderflowException {
-		if (this.isEmpty()) {
+		if (isEmpty()) {
 			throw new StackUnderflowException();
-		}else {
-			T out = array[top];
-			top--;
-			return out;
 		}
+		
+		return array[top--];
 	}
+
 }

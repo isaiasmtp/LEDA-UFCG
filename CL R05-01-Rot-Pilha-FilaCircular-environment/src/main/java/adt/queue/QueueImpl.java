@@ -7,54 +7,59 @@ public class QueueImpl<T> implements Queue<T> {
 
 	@SuppressWarnings("unchecked")
 	public QueueImpl(int size) {
+		if (size <= 0) return;
+		
 		array = (T[]) new Object[size];
 		tail = -1;
 	}
 
 	@Override
 	public T head() {
-		T saida = null;
-		if(!this.isEmpty()) {
-			saida = array[0];	
+		T result = null;
+		if (!isEmpty()) {
+			result = array[0];
 		}
-		return saida;
+		return result;
 	}
 
 	@Override
 	public boolean isEmpty() {
+
 		return (tail == -1);
 	}
 
 	@Override
 	public boolean isFull() {
-		return (tail == array.length-1);
+
+		return (tail == array.length - 1);
 	}
 
 	private void shiftLeft() {
-		for (int i = 0; i < tail; i++) {
-			array[i] = array[i+1];
+		for (int i = 1; i < array.length; i++) {
+			array[i-1] = array[i];
 		}
-		tail --;
 	}
 
 	@Override
 	public void enqueue(T element) throws QueueOverflowException {
-		if(this.isFull()) {
+		if (isFull()) {
 			throw new QueueOverflowException();
-		}else {
-			array[tail + 1] = element;
-			tail ++;
+		}
+		if (element != null) {
+			array[++tail] = element;
 		}
 	}
 
 	@Override
 	public T dequeue() throws QueueUnderflowException {
-		if(this.isEmpty()){
+		if (isEmpty()) {
 			throw new QueueUnderflowException();
-		}else {
-			T head = this.head();	
-			this.shiftLeft();
-			return head;
-		}	
+		}
+		T element = array[0];
+		tail--;
+		shiftLeft();
+		
+		return element;
 	}
+
 }
