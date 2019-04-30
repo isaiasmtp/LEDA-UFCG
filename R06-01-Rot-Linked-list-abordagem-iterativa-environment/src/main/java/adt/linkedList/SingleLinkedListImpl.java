@@ -56,6 +56,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	public void remove(T element) {
 		if(head.getData() == element){
 			head = head.next;
+			
 		}else {
 			SingleLinkedListNode<T> oldNode = new SingleLinkedListNode<T>();
 			SingleLinkedListNode<T> aux = head;
@@ -66,7 +67,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 			}
 			
 			if(!(aux.isNIL())) {
-				oldNode.next = aux.next;
+				oldNode.next =aux.next;
 			}
 		}		
 	}

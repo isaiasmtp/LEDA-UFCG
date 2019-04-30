@@ -8,7 +8,7 @@ public class SingleLinkedListNode<T> {
 	 * Constructor of an empty (NIL) node
 	 */
 	public SingleLinkedListNode() {
-	}
+	} 
 
 	public SingleLinkedListNode(T data, SingleLinkedListNode<T> next) {
 		this.data = data;

@@ -10,7 +10,7 @@ public class DoubleLinkedListNode<T> extends SingleLinkedListNode<T> {
 			DoubleLinkedListNode<T> previous) {
 		super(data, next);
 		this.previous = previous;
-	}
+	} 
 
 	public DoubleLinkedListNode<T> getPrevious() {
 		return previous;

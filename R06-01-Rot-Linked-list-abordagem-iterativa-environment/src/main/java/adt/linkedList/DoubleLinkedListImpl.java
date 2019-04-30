@@ -4,10 +4,8 @@ public class DoubleLinkedListImpl<T> extends SingleLinkedListImpl<T> implements
 		DoubleLinkedList<T> {
 
 	protected DoubleLinkedListNode<T> last;
-	private DoubleLinkedListNode<T> nill = new 	DoubleLinkedListNode<T>() ;
-;
+	private DoubleLinkedListNode<T> nill = new DoubleLinkedListNode<T>();
 
-	
 	public DoubleLinkedListImpl() {
 		setHead(nill);
 		setLast(nill);
@@ -17,36 +15,50 @@ public class DoubleLinkedListImpl<T> extends SingleLinkedListImpl<T> implements
 	public void insertFirst(T element) {
 		if (element == null) return;
 		
-		DoubleLinkedListNode<T> head = (DoubleLinkedListNode<T>) getHead();
-		
 		DoubleLinkedListNode<T> newHead = new DoubleLinkedListNode<>(element, (DoubleLinkedListNode<T>) head, nill);
 		
-		head.previous = newHead; 
-		setHead(newHead);
+		((DoubleLinkedListNode<T>) head).previous = newHead;
 		
-		if(this.getLast().isNIL()) {
-			this.setLast(newHead);
+		if (head.isNIL()) {
+			setLast(newHead);
 		}
-		if(this.getLast().getPrevious()==null) {
-			this.getLast().setPrevious(newHead);
+		
+		setHead(newHead);
+	}
+
+	public void removeFirst() {
+		if (!head.isNIL()) {
+			setHead(head.getNext());		
+			((DoubleLinkedListNode<T>)head).setPrevious(nill);
 		}
 	}
 
 	@Override
-	public void removeFirst() {
-		if(!head.isNIL()) {
-			head = head.next;
-			if (head.isNIL()) {
-				last = (DoubleLinkedListNode<T>) head;
-			}
+	public void insert(T element) {
+		if (element == null) return;
+	
+		if (this.isEmpty()) { 
+			DoubleLinkedListNode<T> newHead = new DoubleLinkedListNode<>(element, nill , nill);
+			setHead(newHead);
+			setLast(newHead);
+		} else {  
+			DoubleLinkedListNode<T> newNode = new DoubleLinkedListNode<>(element, nill , last);
+			last.setNext(newNode);
+			setLast(newNode);
 		}
-		((DoubleLinkedListNode<T>) head).previous = new DoubleLinkedListNode<T>();
 	}
 
 	@Override
 	public void removeLast() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (!last.isNIL()) {
+			setLast(last.getPrevious());
+
+			if (last.isNIL()) {
+				head = last;
+			}
+			last.setNext(nill);
+		}
+
 	}
 
 	public DoubleLinkedListNode<T> getLast() {
