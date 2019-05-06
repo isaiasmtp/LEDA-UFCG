@@ -10,21 +10,31 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented!");
+		return head.isNIL();
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented!");
+		int size = 0;
+		SingleLinkedListNode aux = head;
+		while(!aux.isNIL()) {
+			size++;
+			aux = head.next;
+		}		
+		
+		return size;
 	}
 
 	@Override
 	public T search(T element) {
 		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented!");
-	}
+				throw new UnsupportedOperationException("Not implemented!");
+		}
+		
+		
+			
+		
+	
 
 	@Override
 	public void insert(T element) {
